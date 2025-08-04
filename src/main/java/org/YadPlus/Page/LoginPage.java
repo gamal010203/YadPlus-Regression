@@ -13,9 +13,8 @@ public class LoginPage {
 //    private By emailField = By.id("email");
 
     private By continueButton = By.id("submit-login");
-
-    private By PassField = By.xpath("//body/main/div/div[2]/div[3]/div[2]/form/div[1]/span");
-
+    private By PasswordField = By.xpath("//input[@id=\"password\"]");
+    private By containnuepassbutton = By.xpath("(//button)[3]");
     public LoginPage(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
@@ -25,16 +24,26 @@ public class LoginPage {
         driver.get("https://dev.yad-plus.com/en/auth");
     }
 
-    public void enterEmail(String email) {
+    public void entermail(String email) {
         WebElement emailInput = wait.until(ExpectedConditions.elementToBeClickable(emailField));
         emailInput.clear();
         emailInput.sendKeys(email);
+    }
+    public void enterpass(String Password) {
+        WebElement emailInput = wait.until(ExpectedConditions.elementToBeClickable(PasswordField));
+        emailInput.clear();
+        emailInput.sendKeys(Password);
     }
 
     public void clickContinue() {
         WebElement continueBtn = wait.until(ExpectedConditions.elementToBeClickable(continueButton));
         System.out.println("Button text: " + continueBtn.getText());
         continueBtn.click();
+    }
+    public void ContenueLogin() {
+        WebElement continueBtn1 = wait.until(ExpectedConditions.elementToBeClickable(containnuepassbutton));
+        System.out.println("Button text: " + continueBtn1.getText());
+        continueBtn1.click();
     }
 }
 
