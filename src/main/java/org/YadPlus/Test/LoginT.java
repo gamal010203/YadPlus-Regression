@@ -28,18 +28,33 @@ public class LoginT extends Base {
 loginPage.enterpass("Abdusa1@");
     }
 
-    @Test (priority = 3, dependsOnMethods = "EnterPassLogin")
-    public void Log (){
-
-        loginPage.ContenueLogin();
-
+    @Test(priority = 3, dependsOnMethods = "EnterPassLogin")
+    public void LoginTest() {
+        Homepage home = performLogin();
 
     }
-    public Homepage Login() {
+    public Homepage performLogin() {
         loginPage.ContenueLogin();
-    return new Homepage(driver,wait);
-
+        return new Homepage(driver, wait);
     }
+
+
+
+
+
+
+//    @Test (priority = 3, dependsOnMethods = "EnterPassLogin")
+//    public Homepage  Login (){
+//
+//        loginPage.ContenueLogin();
+//
+//return new Homepage(driver,wait);
+//    }
+//    public Homepage Login() {
+//        loginPage.ContenueLogin();
+//    return new Homepage(driver,wait);
+//
+//    }
 
     @AfterTest
     public void terminate() throws InterruptedException {

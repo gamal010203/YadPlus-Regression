@@ -15,6 +15,7 @@ public class LoginPage {
     private By continueButton = By.id("submit-login");
     private By PasswordField = By.xpath("//input[@id=\"password\"]");
     private By containnuepassbutton = By.xpath("(//button)[3]");
+
     public LoginPage(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
