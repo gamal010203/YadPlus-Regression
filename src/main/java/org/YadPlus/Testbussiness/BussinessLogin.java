@@ -12,7 +12,6 @@ public class BussinessLogin extends Base {
 
     @BeforeClass
     public void setup() {
-        initializeBrowser();
         loginPage = new LoginPage(driver, wait);
     }
 
